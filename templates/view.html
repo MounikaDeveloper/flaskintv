@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="border:2px;">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>Mobile number</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>Subject</th>
+    </tr>
+    {% for x in msg %}
+    <tr>
+        <th>{{ x.id }}</th>
+        <th>{{ x.name }}</th>
+        <th>{{ x.mobilenumber }}</th>
+        <th>{{ x.email }}</th>
+        <th>{{ x.gender }}</th>
+        <th>{{ x.subject }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

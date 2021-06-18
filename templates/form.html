@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Flask</title>
+	<script type="text/javascript">
+	function Validate() {
+  var phoneNo = document.getElementById('mobilenumber');
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+  }  
+  if (phoneNo.value == "" || phoneNo.value == null) {
+    alert("Please enter your Mobile No.");
+    return false;
+  }
+  if (phoneNo.value.length < 10 || phoneNo.value.length > 10) {
+    alert("Mobile No. is not valid, Please Enter 10 Digit Mobile No.");
+    return false;
+  }
+
+  alert("Success ");
+  return true;
+}
+	</script>
+  </head>
+  
+  <body style="margin-left:20%;margin-right:20%">
+  <form name="myform" action="{{url_for('forms')}}" method="POST">
+    <div class="mb-3">
+  <label for="name" class="form-label">Name</label>
+  <input type="text" class="form-control" name="name" id="name" placeholder="Short Text" min="10" max="30" required>
+</div>
+   <div class="mb-3">
+  <label for="mobilenumber" class="form-label">Mobile Number</label>
+  <input type="number" name="mobilenumber" class="form-control" id="mobilenumber" placeholder="Short Text Only Numbers" required>
+</div>
+   <div class="mb-3">
+  <label for="email" class="form-label">Email</label>
+  <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"required>
+</div>
+<div class="mb-3">
+<label>Gender</label>
+<div class="form-check">
+
+  <input class="form-check-input" type="radio" name="gender"  value="male">
+  <label class="form-check-label" >
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender"  checked value="female">
+  <label class="form-check-label">
+    Female
+  </label>
+</div>
+</div>
+<div class="mb-3">
+ <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="subject" required>
+  <option selected>Choose Subject</option>
+  <option value="python">Python</option>
+  <option value="django">Django</option>
+  <option value="flask">Flask</option>
+</select>
+</div>
+<button type="submit" onclick="Validate();">Submit</button>
+</form>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+<head></head>
+<body>
+<table style="text-align:center">
+<tr><th><a href="{{url_for('formpage1')}}">Create</a></th></tr>
+<tr><th><a href="{{ url_for('form',id=2) }}">Update</a></th></tr>
+<tr><th><a href="{{ url_for('enquiries') }}">Enquiries</a></th></tr>
+    <tr><th><a href="{{ url_for('enquiryid',id=1) }}">Enquiry ID</a></th></tr>
+</table>
+{% if msg %}
+    {{ msg }}
+{% endif %}
+</body>
+</html>
